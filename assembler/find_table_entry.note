@@ -1,0 +1,15 @@
+00000000: a900 8508 a915 8509 a50a 8504 a50b 8505
+          |-----------------| |-----------------|
+           init generic word    load 1st param for str_cmp(function's parameter)
+
+00000010: a508 8506 a509 8507 a000 b106 aaea e606
+          |-----------------| |--| |--| ||   |---
+   load 2nd param for str_cmp sety ldai tx    inc
+
+00000020: d002 e607 2000 17c9 00f0 07ea a608 a409
+          --------| |-----||---||---|   |--| |--|
+          2nd param  call  cmp x jmp    ldx  ldy
+
+00000030: 60ea e609 d002 e608 4c08 16ea eaea eaea
+               |--| |--| |--| |-----|
+               inc  ifn0 inc2 repeat
