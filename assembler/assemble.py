@@ -15,6 +15,8 @@ PARTS: list[tuple[str, None | int]] = [
     ("find_table_entry", FN_SIZE * 3 + TABLE_SIZE),
     ("am_implied", FN_SIZE * 4 + TABLE_SIZE),
     ("str_cmp", FN_SIZE * 5 + TABLE_SIZE),
+    ("add_byte_to_word", FN_SIZE * 6 + TABLE_SIZE),
+    ("inc_word", FN_SIZE * 7 + TABLE_SIZE),
 ]
 ASM_SOURCE_OFFSET = 0x8000 - 0x0800
 
@@ -24,13 +26,13 @@ def assemble():
 
     for path, offset in PARTS:
         if offset != None:
-            assert offset > len(result), "invalid offset for " + path
+            assert offset >= len(result), "invalid offset for " + path
             result += bytes([0x00] * (offset - len(result)))
 
         completed_process = subprocess.run(["xxd", "-r", path], capture_output=True)
         result += completed_process.stdout
 
-    assert ASM_SOURCE_OFFSET > len(
+    assert ASM_SOURCE_OFFSET >= len(
         result
     ), "invalid offset, can't insert assembly input"
     result += bytes([0x00] * (ASM_SOURCE_OFFSET - len(result)))

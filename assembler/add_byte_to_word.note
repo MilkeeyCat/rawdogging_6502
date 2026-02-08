@@ -1,0 +1,9 @@
+00000000: 8608 a900 8509 9818 a000 7108 9108 a900
+          |--| |--| |--| |||| |--| |--| |--| |--|
+          stxz lda# staz tycl ldy# adci stai lda#
+                         a c
+
+00000010: c8ea 7108 9108 60ea eaea eaea eaea eaea
+          ||   |--| |--|
+          in   adci stai
+          y

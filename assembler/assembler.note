@@ -1,0 +1,42 @@
+00000000: e000 d002 60ea 8a48 a500 850a a501 850b
+          |--| |--| |--| |||| |-----------------|
+          cmx0 bne  ret  txps setup param for fn
+                         a h
+
+00000010: 2000 16ea 8608 8409 a006 b108 a000 9102
+          |-----|   |-------| |--| |--| |--| |--|
+          call      srow addr ldy# ldai ldy# stai
+find_table_entry
+
+00000020: a508 48a5 0948 a202 2000 18ea 6885 0968
+          |------------| |--| |-----|   |--------
+          push row to    ldx# call        restore
+            stack             inc_word
+
+00000030: 8508 a000 b108 850c aa68 ea38 e50c 488a
+          ---| |--| |--| ||   ||||   || |--|   ||
+          row  ldy# ldai st   tapl   se subz   tx
+
+00000040: a8ea a508 48a5 0948 a200 2080 17ea eaea
+          ||   |------------| |--| |-------|
+          ta   push row to    ldx# call
+          y      stack             add_byte_to_word
+
+00000050: 6885 0968 8508 a007 b108 850c c8ea b108
+          |------------| |--| |--| |--| |--| |--|
+           restore row   ldy# ldai staz iny  ldai
+
+
+00000060: 850d a915 48a9 ea48 6c0c 0018 6901 48a8
+          |--|   ||      ||          || |--| ||||
+          staz   ---------           cl adc  puta
+                     |               c       shy
+                     these are low and high bytes of the address that PC will be set
+                     to after operand handler returns, it's absolute address, don't
+                     forget to update the bytes after adding/removing instructions
+                     before this point
+
+00000070: a200 2080 1768 8508 6838 e508 aa4c 8015
+          |--| |-----|||                |||-----|
+          ldx# advancepop from stack    ta repeat
+               source ptr               x

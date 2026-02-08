@@ -8,8 +8,9 @@ Zero page is used to pass parameters to functions.
 |  2-3   | `assembler`s 2nd parameter(output pointer)                 |
 |  4-5   | `str_cmp` 1st parameter(lhs)                               |
 |  6-7   | `str_cmp` 2nd parameter(rhs)                               |
-|  8-9   | generic word used for indirect reads/writes                |
+|  8-9   | generic word 1 used for indirect reads/writes              |
 |  10-11 | `find_table_entry`s 1st parameter(source mnemonic pointer) |
+|  12-13 | generic word 2 used for indirect reads/writes              |
 
 ## Functions
 
@@ -26,7 +27,14 @@ are not equal, `1` otherwise(in `AC` register).
 using zero page. Returns a pointer to table row(low-byte in `XR`, high-byte in
 `YR`).
 
-Each addressing mode has a separate `am_*` file.
+`add_byte_to_word` adds addend to a memory in zero page. The
+function takes 2 parameters, zero page address in `XR` and addend in `YR`.
+
+`inc_word` increments word in zero page. The function takes 1 parameters, zero
+page address in `XR`.
+
+Each addressing mode has a separate `am_*` file. Each addressing mode function
+returns how many characters it read in `AC`.
 - `am_implied` "noop" handler, the operand is implied, there's nothing to do to
 handle the operand.
 
