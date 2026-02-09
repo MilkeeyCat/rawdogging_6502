@@ -17,6 +17,10 @@ PARTS: list[tuple[str, None | int]] = [
     ("str_cmp", FN_SIZE * 5 + TABLE_SIZE),
     ("add_byte_to_word", FN_SIZE * 6 + TABLE_SIZE),
     ("inc_word", FN_SIZE * 7 + TABLE_SIZE),
+    ("parse_char_to_nibble", FN_SIZE * 8 + TABLE_SIZE),
+    ("parse_hex_byte", FN_SIZE * 9 + TABLE_SIZE),
+    ("assembler_process_hex_byte", FN_SIZE * 10 + TABLE_SIZE),
+    ("am_x_indirect", FN_SIZE * 11 + TABLE_SIZE),
 ]
 ASM_SOURCE_OFFSET = 0x8000 - 0x0800
 

@@ -1,0 +1,4 @@
+00000000: 2080 19a9 0360 eaea eaea eaea eaea eaea
+          |-----||---|
+          call    lda#
+          assembler_process_hex_byte

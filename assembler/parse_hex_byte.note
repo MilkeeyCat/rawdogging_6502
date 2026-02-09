@@ -1,0 +1,9 @@
+00000000: 2080 1885 0806 0806 0806 0806 0898 aaea
+          |-----||---||--------|
+          call   staz shift left
+parse_char_to_nibble  4 bytes
+on xr(param)
+
+00000010: 2080 1805 0860 eaea eaea eaea eaea eaea
+          |-----||---|
+          call    and

@@ -33,6 +33,16 @@ function takes 2 parameters, zero page address in `XR` and addend in `YR`.
 `inc_word` increments word in zero page. The function takes 1 parameters, zero
 page address in `XR`.
 
+`parse_char_to_nibble` takes 1 parameter, character value, in `RX`. Returns
+nibble value in `AC`(only uppercase hex is supported).
+
+`parse_hex_byte` takes 2 parameters, high nibble in `XR`, low nibble in `YR`.
+Returns hex byte value in `AC`.
+
+`assembler_process_hex_byte` is a function which uses `assembler`s first param, reads
+hex byte value, emits it in `assembler`s second param and increments first
+pointer by 2 and 2nd one by 1.
+
 Each addressing mode has a separate `am_*` file. Each addressing mode function
 returns how many characters it read in `AC`.
 - `am_implied` "noop" handler, the operand is implied, there's nothing to do to

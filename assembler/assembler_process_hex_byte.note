@@ -1,0 +1,7 @@
+00000000: a001 b100 aac8 b100 a820 0019 a000 9102
+          |--| |--|      |--|   |-----| |--| |--|
+          ldy# ldai      ldai   call    ldy# stai
+                                parse_hex_byte
+00000010: a202 2000 1860 eaea eaea eaea eaea eaea
+          |--| |-----|
+          ldx# call inc_word
