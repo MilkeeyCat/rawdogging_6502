@@ -1,4 +1,4 @@
-00000000: a900 8508 a915 8509 a50a 8504 a50b 8505
+00000000: a980 8508 a908 8509 a50a 8504 a50b 8505
           |-----------------| |-----------------|
            init generic word    load 1st param for str_cmp(function's parameter)
 

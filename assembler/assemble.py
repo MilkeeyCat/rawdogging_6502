@@ -10,7 +10,7 @@ TABLE_SIZE = 200 * 8 * 2
 FN_SIZE = 128
 PARTS: list[tuple[str, None | int]] = [
     ("main", None),
-    ("mnemonics_table", FN_SIZE + TABLE_SIZE),
+    ("mnemonics_table", FN_SIZE),
     ("assembler", FN_SIZE * 2 + TABLE_SIZE),
     ("find_table_entry", FN_SIZE * 3 + TABLE_SIZE),
     ("am_implied", FN_SIZE * 4 + TABLE_SIZE),
