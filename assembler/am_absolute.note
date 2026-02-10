@@ -1,0 +1,4 @@
+00000000: 2080 1aa9 0560 eaea eaea eaea eaea eaea
+          |-----||---|
+          call    lda#
+          assembler_process_hex_word

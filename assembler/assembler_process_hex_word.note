@@ -1,0 +1,9 @@
+00000000: 2080 19a5 0048 a501 48a2 00a0 0220 8017
+          |-----||-------------||---||---||-----|
+          call   save old addr  ldx# ldy# call
+          assembler_process_hex_byte      add_byte_to_word
+
+00000010: 2080 1968 8501 6885 0060 eaea eaea eaea
+          |-----||-------------|
+          call   restore old ptr
+assembler_process_hex_byte

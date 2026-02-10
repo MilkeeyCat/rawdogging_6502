@@ -39,9 +39,13 @@ nibble value in `AC`(only uppercase hex is supported).
 `parse_hex_byte` takes 2 parameters, high nibble in `XR`, low nibble in `YR`.
 Returns hex byte value in `AC`.
 
-`assembler_process_hex_byte` is a function which uses `assembler`s first param, reads
-hex byte value, emits it in `assembler`s second param and increments first
-pointer by 2 and 2nd one by 1.
+`assembler_process_hex_byte` is a function which uses `assembler`s first param,
+reads hex byte value, emits it in `assembler`s second param and increments it by
+1.
+
+`assembler_process_hex_word` is a function which uses `assembler`s first param,
+reads hex byte value, emits it in `assembler`s second param and increments it by
+2.
 
 Each addressing mode has a separate `am_*` file. Each addressing mode function
 returns how many characters it read in `AC`.
