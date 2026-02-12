@@ -1,0 +1,3 @@
+JSR 801A
+LDA# 05
+RTS

@@ -26,6 +26,7 @@ PARTS: list[tuple[str, None | int]] = [
     ("am_immediate", FN_SIZE * 14 + TABLE_SIZE),
     ("am_relative", FN_SIZE * 15 + TABLE_SIZE),
     ("am_indirect_y", FN_SIZE * 16 + TABLE_SIZE),
+    ("am_zeropage", FN_SIZE * 17 + TABLE_SIZE),
 ]
 ASM_SOURCE_OFFSET = 0x8000 - 0x0800
 
